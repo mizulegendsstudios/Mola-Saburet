@@ -38,7 +38,7 @@
 
         .main-wrapper { position: relative; z-index: 1; }
 
-        /* --- HEADER CON IDIOMA --- */
+        /* --- HEADER --- */
         header {
             background: var(--glass);
             backdrop-filter: blur(10px);
@@ -71,7 +71,7 @@
             font-weight: bold; display: flex; align-items: center; gap: 10px;
         }
 
-        /* --- SLIDESHOW CON IMÁGENES --- */
+        /* --- SLIDESHOW --- */
         .hero { padding: 30px 5%; }
         .slideshow-container {
             width: 100%; height: 400px; position: relative;
@@ -85,12 +85,12 @@
             padding-left: 60px; color: white; animation: slideFade 15s infinite;
         }
 
-        /* Imágenes de fondo para cada slide - usando URL alternativa */
-        .slide:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://github.com/mizulegendsstudios/Mola-Saburet/raw/main/assets/saburetUntitled.jpg'); animation-delay: 0s; }
-        .slide:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://github.com/mizulegendsstudios/Mola-Saburet/raw/main/assets/Panama_mola1.jpg'); animation-delay: 3s; }
+        /* URLs de GitHub corregidas a Raw */
+        .slide:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/saburetUntitled.jpg'); animation-delay: 0s; }
+        .slide:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/Panama_mola1.jpg'); animation-delay: 3s; }
         .slide:nth-child(3) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200'); animation-delay: 6s; }
         .slide:nth-child(4) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1589273680448-1ce3c06e6995?w=1200'); animation-delay: 9s; }
-        .slide:nth-child(5) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://plus.unsplash.com/premium_vector-1723453417183-901a145d7bac?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); animation-delay: 12s; }
+        .slide:nth-child(5) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://plus.unsplash.com/premium_vector-1723453417183-901a145d7bac?q=80&w=880&auto=format&fit=crop'); animation-delay: 12s; }
 
         @keyframes slideFade {
             0%, 20% { opacity: 1; }
@@ -99,7 +99,8 @@
 
         /* --- GRID PRINCIPAL --- */
         .main-grid { display: grid; grid-template-columns: 300px 1fr; gap: 30px; padding: 0 5% 50px 5%; }
-        .card { background: var(--glass); border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .card { background: var(--glass); border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
         .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .product-img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; }
         .price { color: var(--guna-red); font-weight: bold; font-size: 1.4rem; }
@@ -107,7 +108,7 @@
         .mola-badge { background: var(--guna-red); color: white; }
         .saburet-badge { background: #2e7d32; color: white; }
 
-        /* --- SECCIÓN DE REVISTA INTERACTIVA --- */
+        /* --- REVISTA --- */
         .magazine-section {
             padding: 80px 0;
             display: flex;
@@ -130,10 +131,8 @@
             max-width: 90%;
         }
 
-        /* Páginas */
         .page { background: white; color: #111; overflow: hidden; }
         .page-inner { padding: 30px; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; }
-        
         .page-img { width: 100%; height: 350px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
 
         .cover-page {
@@ -141,7 +140,6 @@
             color: white; display: flex; align-items: center; justify-content: center; text-align: center;
         }
 
-        /* Botones dentro de la revista */
         .mag-actions { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
         
         .btn-cotizar {
@@ -150,41 +148,19 @@
         }
 
         .btn-fav { background: none; border: none; font-size: 1.5rem; color: #ccc; cursor: pointer; transition: 0.3s; }
-        .btn-fav:hover { color: var(--guna-red); }
 
-        /* Controles externos */
         .mag-controls { margin-bottom: 50px; display: flex; gap: 20px; }
         .btn-nav {
             background: var(--guna-red); color: white; border: none;
             padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: bold;
         }
 
-        /* --- BOTÓN VER MÁS --- */
-        .view-more-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-
+        .view-more-container { text-align: center; margin: 20px 0; }
         .btn-view-more {
-            background: var(--guna-gold);
-            color: var(--deep-black);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            background: var(--guna-gold); color: var(--deep-black); border: none;
+            padding: 12px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; transition: 0.3s;
         }
 
-        .btn-view-more:hover {
-            background: var(--guna-red);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        /* --- FOOTER --- */
         footer {
             background: var(--deep-black); color: white; padding: 50px 5% 20px 5%;
             margin-top: 50px; border-top: 4px solid var(--guna-red);
@@ -193,49 +169,13 @@
         .footer-section h4 { border-left: 3px solid var(--guna-red); padding-left: 10px; margin-bottom: 20px; text-transform: uppercase; }
         .footer-section p, .footer-section a { color: #bbb; text-decoration: none; font-size: 0.9rem; margin-bottom: 10px; display: block; }
         .social-icons { display: flex; gap: 15px; font-size: 1.5rem; margin-top: 15px; }
-        .social-icons a:hover { color: var(--guna-red); }
         .footer-bottom { border-top: 1px solid #333; margin-top: 40px; padding-top: 20px; text-align: center; font-size: 0.8rem; color: #777; }
 
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 1200px) {
-            .mag-container {
-                width: 800px;
-                height: 480px;
-            }
-        }
-
+        /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .mag-container {
-                width: 100%;
-                max-width: 600px;
-                height: 360px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .slideshow-container {
-                height: 250px;
-            }
-            
-            .slide {
-                padding-left: 20px;
-            }
-            
-            .slide h2 {
-                font-size: 1.8rem !important;
-            }
+            .main-grid { grid-template-columns: 1fr; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .mag-container { width: 100%; height: 400px; }
         }
     </style>
 </head>
@@ -246,12 +186,9 @@
     <div class="main-wrapper">
         <header>
             <div class="logo-box">GUNA ART</div>
-            
             <div class="header-actions">
-                <button class="lang-btn">
-                    <i class="fas fa-globe"></i> ES | EN
-                </button>
-                <a href="https://wa.me/507XXXXXXXX" class="whatsapp-contact" target="_blank">
+                <button class="lang-btn"><i class="fas fa-globe"></i> ES | EN</button>
+                <a href="https://wa.me/50700000000" class="whatsapp-contact" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                     <span>Vendedor(a)</span>
                 </a>
@@ -287,7 +224,7 @@
             <aside>
                 <div class="card" style="border: 2px solid var(--guna-gold);">
                     <span class="badge mola-badge">Mola del Mes</span>
-                    <img src="https://github.com/mizulegendsstudios/Mola-Saburet/raw/main/assets/molaUntitled.jpg" class="product-img" style="height: 250px;" crossorigin="anonymous">
+                    <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/molaUntitled.jpg" class="product-img" style="height: 250px;">
                     <h3 style="margin: 15px 0;">Obra Ancestral</h3>
                     <div class="price">B/. 75.00</div>
                     <button style="width:100%; background:var(--guna-red); color:white; border:none; padding:12px; border-radius:8px; margin-top:10px; font-weight:bold; cursor:pointer;">Consultar</button>
@@ -305,165 +242,96 @@
                     </article>
                     <article class="card">
                         <span class="badge mola-badge">Mola</span>
-                        <img src="https://github.com/mizulegendsstudios/Mola-Saburet/raw/main/assets/Panama_mola2.jpg" class="product-img" crossorigin="anonymous">
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/Panama_mola2.jpg" class="product-img">
                         <div class="price">B/. 35.00</div>
                         <p style="font-weight:bold;">Mola "Vida Isleña"</p>
                     </article>
                     <article class="card">
                         <span class="badge saburet-badge">Saburet</span>
-                        <img src="https://images.unsplash.com/photo-1727684455609-02060483c26f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img">
+                        <img src="https://images.unsplash.com/photo-1727684455609-02060483c26f?q=80&w=400" class="product-img">
                         <div class="price">B/. 12.00</div>
                         <p style="font-weight:bold;">Saburet Floral</p>
                     </article>
                 </div>
-                
                 <div class="view-more-container">
                     <button class="btn-view-more">Ver Catálogo Completo</button>
                 </div>
             </section>
         </main>
 
-        <!-- SECCIÓN DE REVISTA INTERACTIVA - SABURET -->
         <section class="magazine-section">
             <h2 class="section-title">Catálogo Saburet</h2>
-            
             <div id="magazine-saburet" class="mag-container">
                 <div class="page cover-page">
                     <div class="page-inner">
                         <h1>SABURET</h1>
-                        <p>Catálogo de Telas Tradicionales<br>Edición 2025</p>
+                        <p>Catálogo de Telas Tradicionales 2025</p>
                     </div>
                 </div>
-
                 <div class="page">
                     <div class="page-inner">
                         <h3>Diseño Win Clásico</h3>
-                        <img src="https://github.com/mizulegendsstudios/Mola-Saburet/raw/main/assets/saburete-36_-2-scaled.jpg" class="page-img" crossorigin="anonymous">
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/saburete-36_-2-scaled.jpg" class="page-img">
                         <p>Tejido de alta resistencia ideal para la confección del Uwin diario.</p>
                         <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR YARDA</a>
-                            <button class="btn-fav"><i class="fas fa-heart"></i></button>
+                            <a href="#" class="btn-cotizar">COTIZAR</a>
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                 </div>
-
                 <div class="page">
                     <div class="page-inner">
-                        <h3>Patrón Floral Roja</h3>
-                        <img src="https://images.unsplash.com/photo-1680345575909-99633d4b6f46?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="page-img">
-                        <p>Edición especial con motivos de la flora de la comarca.</p>
-                        <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR YARDA</a>
-                            <button class="btn-fav"><i class="fas fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="page">
-                    <div class="page-inner">
-                        <h3>Estilo Geométrico Azul</h3>
-                        <img src="https://github.com/mizulegendsstudios/Mola-Saburet/raw/main/assets/saburete-36_-4-scaled.jpg" class="page-img" crossorigin="anonymous">
+                        <h3>Estilo Geométrico</h3>
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/saburete-36_-4-scaled.jpg" class="page-img">
                         <p>Diseño moderno con patrones tradicionales en tonos azules.</p>
                         <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR YARDA</a>
-                            <button class="btn-fav"><i class="fas fa-heart"></i></button>
+                            <a href="#" class="btn-cotizar">COTIZAR</a>
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                 </div>
-
-                <div class="page">
-                    <div class="page-inner">
-                        <h3>Saburet Dorado</h3>
-                        <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=600" class="page-img">
-                        <p>Edición limitada con hilos dorados para ocasiones especiales.</p>
-                        <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR YARDA</a>
-                            <button class="btn-fav"><i class="fas fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="page cover-page" style="background: linear-gradient(45deg, var(--guna-gold), #b8860b);">
-                    <div class="page-inner">
-                        <h1 style="color: black;">COLECCIÓN</h1>
-                        <p style="color: black;">Calidad en cada hilo</p>
-                    </div>
+                <div class="page cover-page" style="background: #333;">
+                    <div class="page-inner"><h2>Fin del Catálogo</h2></div>
                 </div>
             </div>
-
             <div class="mag-controls">
                 <button class="btn-nav" id="prev-saburet">Anterior</button>
                 <button class="btn-nav" id="next-saburet">Siguiente</button>
             </div>
         </section>
 
-        <!-- SECCIÓN DE REVISTA INTERACTIVA - MOLAS -->
         <section class="magazine-section" style="background: rgba(0,0,0,0.6);">
             <h2 class="section-title">Catálogo Molas</h2>
-            
             <div id="magazine-molas" class="mag-container">
-                <div class="page cover-page" style="background: linear-gradient(45deg, var(--guna-gold), #b8860b);">
-                    <div class="page-inner">
-                        <h1 style="color: black;">MOLAS</h1>
-                        <p style="color: black;">Arte Ancestral Hecho a Mano</p>
-                    </div>
+                <div class="page cover-page" style="background: var(--guna-gold);">
+                    <div class="page-inner"><h1 style="color: black;">MOLAS</h1></div>
                 </div>
-
-                <div class="page">
-                    <div class="page-inner">
-                        <h3>Mola Protección</h3>
-                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600" class="page-img">
-                        <p>Diseño geométrico que representa los caminos de la vida.</p>
-                        <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR PIEZA</a>
-                            <button class="btn-fav"><i class="fas fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="page">
                     <div class="page-inner">
                         <h3>Mola Naturaleza</h3>
-                        <img src="https://github.com/mizulegendsstudios/Mola-Saburet/raw/main/assets/QOXTJWTCLFB43PQRF32TCNLP2Y.jpg" class="page-img" crossorigin="anonymous">
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/QOXTJWTCLFB43PQRF32TCNLP2Y.jpg" class="page-img">
                         <p>Inspirada en las aves del archipiélago de San Blas.</p>
                         <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR PIEZA</a>
-                            <button class="btn-fav"><i class="fas fa-heart"></i></button>
+                            <a href="#" class="btn-cotizar">COTIZAR</a>
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                 </div>
-
                 <div class="page">
                     <div class="page-inner">
                         <h3>Mola Marina</h3>
-                        <img src="https://github.com/mizulegendsstudios/Mola-Saburet/raw/main/assets/Panama_mola3.jpg" class="page-img" crossorigin="anonymous">
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/Panama_mola3.jpg" class="page-img">
                         <p>Representación de la vida marina y los peces del Caribe.</p>
                         <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR PIEZA</a>
-                            <button class="btn-fav"><i class="fas fa-heart"></i></button>
+                            <a href="#" class="btn-cotizar">COTIZAR</a>
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                 </div>
-
-                <div class="page">
-                    <div class="page-inner">
-                        <h3>Mola Espiritual</h3>
-                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600" class="page-img">
-                        <p>Símbolos sagrados de la cosmovisión Guna.</p>
-                        <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR PIEZA</a>
-                            <button class="btn-fav"><i class="fas fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="page cover-page" style="background: #333;">
-                    <div class="page-inner">
-                        <h3>Arte Sagrado</h3>
-                    </div>
+                <div class="page cover-page" style="background: #222;">
+                    <div class="page-inner"><h2>Arte Sagrado</h2></div>
                 </div>
             </div>
-
             <div class="mag-controls">
                 <button class="btn-nav" id="prev-molas">Anterior</button>
                 <button class="btn-nav" id="next-molas">Siguiente</button>
@@ -474,121 +342,62 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>Sobre Guna Art</h4>
-                    <p>Dedicados a la preservación y venta de textiles tradicionales de la comarca Guna Yala, Panamá.</p>
+                    <p>Preservación y venta de textiles tradicionales de Guna Yala, Panamá.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Ciudad de Panamá / Guna Yala</p>
                     <p><i class="fas fa-phone"></i> +507 0000-0000</p>
                     <p><i class="fas fa-envelope"></i> ventas@guna-art.com</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Síguenos</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
             </div>
-            <div class="footer-bottom">
-                &copy; 2025 Guna Art - Todos los derechos reservados.
-            </div>
+            <div class="footer-bottom">&copy; 2025 Guna Art - Identidad y Cultura.</div>
         </footer>
     </div>
 
     <script>
         $(document).ready(function() {
-            // Inicializar Revista Saburet
-            $('#magazine-saburet').turn({
-                width: 1000, 
-                height: 600, 
-                autoCenter: true, 
-                display: 'double', 
-                gradients: true,
-                when: {
-                    turning: function(e, page, view) {
-                        // Actualizar controles cuando se gira la página
-                        var total = $(this).turn('pages');
-                        $('#prev-saburet').toggleClass('disabled', page === 1);
-                        $('#next-saburet').toggleClass('disabled', page === total);
-                    }
-                }
-            });
-
-            // Inicializar Revista Molas
-            $('#magazine-molas').turn({
-                width: 1000, 
-                height: 600, 
-                autoCenter: true, 
-                display: 'double', 
-                gradients: true,
-                when: {
-                    turning: function(e, page, view) {
-                        // Actualizar controles cuando se gira la página
-                        var total = $(this).turn('pages');
-                        $('#prev-molas').toggleClass('disabled', page === 1);
-                        $('#next-molas').toggleClass('disabled', page === total);
-                    }
-                }
-            });
-
-            // Controles de navegación Saburet
-            $('#next-saburet').click(function() { 
-                $('#magazine-saburet').turn('next'); 
-            });
-            
-            $('#prev-saburet').click(function() { 
-                $('#magazine-saburet').turn('previous'); 
-            });
-
-            // Controles de navegación Molas
-            $('#next-molas').click(function() { 
-                $('#magazine-molas').turn('next'); 
-            });
-            
-            $('#prev-molas').click(function() { 
-                $('#magazine-molas').turn('previous'); 
-            });
-
-            // Efecto Favorito
-            $('.btn-fav').click(function() {
-                $(this).toggleClass('active');
-                if($(this).hasClass('active')) {
-                    $(this).css('color', '#d32f2f');
-                    $(this).find('i').removeClass('far').addClass('fas');
-                } else {
-                    $(this).css('color', '#ccc');
-                    $(this).find('i').removeClass('fas').addClass('far');
-                }
-            });
-
-            // Botón Ver Catálogo Completo
-            $('.btn-view-more').click(function() {
-                // Animación de scroll suave hacia la sección de revista
-                $('html, body').animate({
-                    scrollTop: $('.magazine-section').first().offset().top
-                }, 1000);
-            });
-
-            // Manejo responsive para las revistas
-            function adjustMagazineSize() {
-                if ($(window).width() < 900) {
-                    $('#magazine-saburet').turn('display', 'single');
-                    $('#magazine-saburet').turn('size', $(window).width() * 0.9, 360);
-                    $('#magazine-molas').turn('display', 'single');
-                    $('#magazine-molas').turn('size', $(window).width() * 0.9, 360);
-                } else {
-                    $('#magazine-saburet').turn('display', 'double');
-                    $('#magazine-saburet').turn('size', 1000, 600);
-                    $('#magazine-molas').turn('display', 'double');
-                    $('#magazine-molas').turn('size', 1000, 600);
-                }
+            function initMag(id) {
+                $(id).turn({
+                    width: 1000, height: 600, autoCenter: true,
+                    display: 'double', gradients: true
+                });
             }
 
-            $(window).resize(adjustMagazineSize);
-            
-            // Verificar tamaño inicial
-            adjustMagazineSize();
+            initMag('#magazine-saburet');
+            initMag('#magazine-molas');
+
+            $('#next-saburet').click(function() { $('#magazine-saburet').turn('next'); });
+            $('#prev-saburet').click(function() { $('#magazine-saburet').turn('previous'); });
+            $('#next-molas').click(function() { $('#magazine-molas').turn('next'); });
+            $('#prev-molas').click(function() { $('#magazine-molas').turn('previous'); });
+
+            $('.btn-fav').click(function() {
+                $(this).toggleClass('active');
+                const icon = $(this).find('i');
+                if($(this).hasClass('active')) {
+                    $(this).css('color', '#d32f2f');
+                    icon.removeClass('far').addClass('fas');
+                } else {
+                    $(this).css('color', '#ccc');
+                    icon.removeClass('fas').addClass('far');
+                }
+            });
+
+            $('.btn-view-more').click(function() {
+                $('html, body').animate({ scrollTop: $('#magazine-saburet').offset().top - 100 }, 800);
+            });
+
+            function adjustSize() {
+                const width = $(window).width();
+                const display = width < 900 ? 'single' : 'double';
+                const magWidth = width < 900 ? width * 0.9 : 1000;
+                const magHeight = width < 900 ? 450 : 600;
+
+                $('#magazine-saburet, #magazine-molas').turn('display', display).turn('size', magWidth, magHeight);
+            }
+
+            $(window).resize(adjustSize);
+            adjustSize();
         });
     </script>
 </body>
