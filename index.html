@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Naguiryai Nega - Diseños de Morsan y Sabured por Naypiler. El punto de encuentro para emprendedores Dule en 5 de Mayo, Panamá. Telas, artesanías y accesorios tradicionales.">
-    <meta name="keywords" content="naguiryai nega, morsan, sabured, naypiler, dule, guna yala, 5 de mayo, panamá, artesanías dule, emprendedores indígenas, cultura guna">
+    <meta name="description" content="Naguiryai Nega - Diseños de Morsan, Musue (dunnue), Mola y Sabured por Naypiler. El punto de encuentro para emprendedores Dule en 5 de Mayo, Panamá. Telas tradicionales, artesanías y accesorios culturales. Productos textiles tradicionales: Morsan para Uwin, Musue (dunnue) como pañuelo, Mola aplicada en pecho y abdomen, Sabured como falda decorativa.">
+    <meta name="keywords" content="naguiryai nega, morsan, musue, dunnue, mola, sabured, naypiler, dule, guna yala, 5 de mayo, panamá, artesanías dule, emprendedores indígenas, cultura guna, telas tradicionales, uwin, dunnue">
     <meta name="author" content="Naguiryai Nega">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
@@ -12,16 +12,16 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.naguiryai-nega.com/">
-    <meta property="og:title" content="Naguiryai Nega - Diseños de Morsan y Sabured por Naypiler">
-    <meta property="og:description" content="El punto de encuentro para los emprendedores Dule. Diseños de Morsan, accesorios Sabured, telas y artesanías tradicionales.">
+    <meta property="og:title" content="Naguiryai Nega - Diseños de Morsan, Musue, Mola y Sabured por Naypiler">
+    <meta property="og:description" content="El punto de encuentro para los emprendedores Dule. Diseños de Morsan para Uwin, Musue (dunnue), Mola aplicada, accesorios Sabured. Telas tradicionales y artesanías culturales.">
     <meta property="og:image" content="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/naypiler_nega.png">
     <meta property="og:locale" content="es_ES">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.naguiryai-nega.com/">
-    <meta property="twitter:title" content="Naguiryai Nega - Diseños de Morsan y Sabured por Naypiler">
-    <meta property="twitter:description" content="El punto de encuentro para los emprendedores Dule. Diseños de Morsan, accesorios Sabured, telas y artesanías tradicionales.">
+    <meta property="twitter:title" content="Naguiryai Nega - Diseños de Morsan, Musue, Mola y Sabured por Naypiler">
+    <meta property="twitter:description" content="El punto de encuentro para los emprendedores Dule. Diseños de Morsan para Uwin, Musue (dunnue), Mola aplicada, accesorios Sabured. Telas tradicionales y artesanías culturales.">
     <meta property="twitter:image" content="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/naypiler_nega.png">
     
     <!-- Canonical URL -->
@@ -34,7 +34,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
     <link rel="preload" href="https://code.jquery.com/jquery-3.7.1.min.js" as="script">
     
-    <title>Naguiryai Nega - Diseños de Morsan y Sabured por Naypiler | Emprendedores Dule</title>
+    <title>Naguiryai Nega - Diseños de Morsan, Musue, Mola y Sabured por Naypiler | Emprendedores Dule</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -324,6 +324,16 @@
             color: white; 
         }
         
+        .mola-badge { 
+            background: var(--guna-gold); 
+            color: var(--deep-black); 
+        }
+        
+        .musue-badge { 
+            background: var(--whatsapp-green); 
+            color: white; 
+        }
+        
         .sabured-badge { 
             background: var(--guna-gold); 
             color: var(--deep-black); 
@@ -341,8 +351,8 @@
             animation: fadeIn 1s ease-out forwards;
         }
 
-        .magazine-section:nth-of-type(2) { animation-delay: 1.9s; }
-        .magazine-section:nth-of-type(3) { animation-delay: 2.1s; }
+        .magazine-section:nth-of-type(3) { animation-delay: 1.9s; }
+        .magazine-section:nth-of-type(4) { animation-delay: 2.1s; }
 
         .section-title {
             color: white; font-size: 2.5rem; margin-bottom: 40px;
@@ -385,7 +395,11 @@
 
         .cover-page {
             background: linear-gradient(45deg, var(--guna-red), #8b0000);
-            color: white; display: flex; align-items: center; justify-content: center; text-align: center;
+            color: white; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
         }
 
         .mag-actions { 
@@ -393,12 +407,22 @@
             justify-content: space-between; 
             align-items: center; 
             margin-top: auto; 
+            padding: 15px 0;
+            position: relative;
+            z-index: 10;
         }
         
         .btn-cotizar {
-            background: var(--whatsapp-green); color: white; text-decoration: none;
-            padding: 10px 15px; border-radius: 5px; font-weight: bold; font-size: 0.9rem;
+            background: var(--whatsapp-green); 
+            color: white; 
+            text-decoration: none;
+            padding: 10px 15px; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            font-size: 0.9rem;
             transition: all var(--transition-speed) ease;
+            position: relative;
+            z-index: 10;
         }
 
         .btn-cotizar:hover, .btn-cotizar:focus {
@@ -409,21 +433,24 @@
         }
 
         .btn-fav { 
-            background: none; 
-            border: none; 
+            background: var(--glass); 
+            border: 1px solid #ddd; 
             font-size: 1.5rem; 
-            color: #ccc; 
+            color: var(--guna-red); 
             cursor: pointer; 
             transition: all var(--transition-speed) ease;
-            padding: 5px;
-            border-radius: 50%;
+            padding: 8px 12px;
+            border-radius: 5px;
+            position: relative;
+            z-index: 10;
         }
 
         .btn-fav:hover, .btn-fav:focus { 
             color: var(--guna-red); 
-            transform: scale(1.2);
+            transform: scale(1.1);
             outline: 2px solid var(--focus-color);
             outline-offset: 2px;
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .mag-controls { 
@@ -435,8 +462,13 @@
         }
         
         .btn-nav {
-            background: var(--guna-red); color: white; border: none;
-            padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: bold;
+            background: var(--guna-red); 
+            color: white; 
+            border: none;
+            padding: 10px 20px; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            font-weight: bold;
             transition: all var(--transition-speed) ease;
         }
 
@@ -455,14 +487,21 @@
         }
         
         .btn-view-more {
-            background: var(--guna-gold); color: var(--deep-black); border: none;
-            padding: 12px 30px; border-radius: 30px; font-weight: bold; cursor: pointer;
+            background: var(--guna-gold); 
+            color: var(--deep-black); 
+            border: none;
+            padding: 12px 30px; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            cursor: pointer;
             transition: all var(--transition-speed) ease;
         }
 
         .btn-view-more:hover, .btn-view-more:focus {
-            background: var(--guna-red); color: white;
-            transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background: var(--guna-red); 
+            color: white;
+            transform: translateY(-3px); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             outline: 2px solid var(--focus-color);
             outline-offset: 2px;
         }
@@ -531,8 +570,11 @@
 
         /* --- FOOTER CON ACCESIBILIDAD --- */
         footer {
-            background: var(--deep-black); color: white; padding: 50px 5% 20px 5%;
-            margin-top: 50px; border-top: 4px solid var(--guna-red);
+            background: var(--deep-black); 
+            color: white; 
+            padding: 50px 5% 20px 5%;
+            margin-top: 50px; 
+            border-top: 4px solid var(--guna-red);
             opacity: 0;
             animation: slideInUp 1s ease-out 2.3s forwards;
         }
@@ -642,7 +684,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Naguiryai Nega",
-        "description": "Diseños de Morsan y Sabured por Naypiler. El punto de encuentro para los emprendedores Dule en 5 de Mayo, Panamá.",
+        "description": "Diseños de Morsan, Musue (dunnue), Mola y Sabured por Naypiler. El punto de encuentro para los emprendedores Dule en 5 de Mayo, Panamá. Telas tradicionales, artesanías y accesorios culturales. Productos textiles tradicionales: Morsan para Uwin, Musue (dunnue) como pañuelo, Mola aplicada en pecho y abdomen, Sabured como falda decorativa.",
         "url": "https://www.naguiryai-nega.com",
         "telephone": "+50765381020",
         "email": "naguiryai.nega@gmail.com",
@@ -659,7 +701,7 @@
         },
         "openingHours": "Mo,Tu,We,Th,Fr,Sa 09:30-16:30",
         "sameAs": [
-            "https://www.instagram.com/naguiryai.nega",
+            "https://www.instagram.com/naguiryai_nega",
             "https://wa.me/50765381020"
         ],
         "offers": {
@@ -732,20 +774,20 @@
                         <p style="font-weight:bold;">Morsan Tradicional</p>
                     </article>
                     <article class="card product-card" role="listitem">
-                        <span class="badge sabured-badge">Sabured</span>
+                        <span class="badge mola-badge">Mola</span>
                         <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/Panama_mola2.jpg" 
                              class="product-img" 
-                             alt="Accesorio Sabured con motivos culturales">
+                             alt="Mola con motivos culturales">
                         <div class="price" aria-label="Precio: 35.00 balboas">B/. 35.00</div>
-                        <p style="font-weight:bold;">Sabured Cultural</p>
+                        <p style="font-weight:bold;">Mola Cultural</p>
                     </article>
                     <article class="card product-card" role="listitem">
-                        <span class="badge morsan-badge">Morsan</span>
+                        <span class="badge sabured-badge">Sabured</span>
                         <img src="https://images.unsplash.com/photo-1727684455609-02060483c26f?q=80&w=400" 
                              class="product-img" 
-                             alt="Morsan floral con diseños coloridos">
+                             alt="Accesorio Sabured con motivos culturales">
                         <div class="price" aria-label="Precio: 12.00 balboas">B/. 12.00</div>
-                        <p style="font-weight:bold;">Morsan Floral</p>
+                        <p style="font-weight:bold;">Sabured Cultural</p>
                     </article>
                 </div>
                 <div class="view-more-container">
@@ -754,51 +796,16 @@
             </section>
         </main>
 
-        <!-- SECCIÓN DE INFORMACIÓN CON TEXTO VISIBLE -->
-        <section class="info-section" aria-labelledby="info-title">
-            <h2 id="info-title" class="section-title" style="text-align: center; margin-bottom: 50px;">Visítanos</h2>
-            <div class="info-container">
-                <div class="info-card">
-                    <i class="fas fa-clock info-icon" aria-hidden="true"></i>
-                    <h3 class="info-title">Horario</h3>
-                    <p class="info-text">Lunes a Sábado<br>9:30 am - 4:30 pm</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-map-marker-alt info-icon" aria-hidden="true"></i>
-                    <h3 class="info-title">Ubicación</h3>
-                    <p class="info-text">Local 6, Galería Comercial<br>5 de mayo, Santa Ana<br>Ciudad de Panamá, Panamá</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-phone info-icon" aria-hidden="true"></i>
-                    <h3 class="info-title">Contacto</h3>
-                    <p class="info-text">WhatsApp: +507 65381020<br>Email: naguiryai.nega@gmail.com</p>
-                </div>
-            </div>
-            <div class="info-container" style="margin-top: 30px;">
-                <div class="map-container">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=8.960829,-79.541266&z=15&output=embed" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy"
-                        title="Mapa de ubicación de Naguiryai Nega">
-                    </iframe>
-                </div>
-            </div>
-        </section>
-
         <section class="magazine-section" aria-labelledby="morsan-title">
             <h2 id="morsan-title" class="section-title">Catálogo Morsan</h2>
             <div id="magazine-morsan" class="mag-container" role="region" aria-label="Catálogo interactivo de Morsan">
                 <div class="page cover-page" role="article">
-                    <div class="page-inner">
+                    <div class="page-inner" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                         <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/naypiler_nega.png" 
-                             style="width: 150px; margin-bottom: 20px;" 
-                             alt="Logo Naypiler Nega">
+                             style="width: 180px; margin-bottom: 20px; display: block;" 
+                             alt="Logo Naypler Nega">
                         <h1>DAGAR NAGGU<br>DUDDU MORSAN</h1>
-                        <p>Catálogo 2025 - Colección Especial</p>
+                        <p>Catálogo 2026 - Colección Especial</p>
                     </div>
                 </div>
                 <div class="page" role="article">
@@ -886,16 +893,83 @@
             </div>
         </section>
 
-        <section class="magazine-section" style="background: rgba(0,0,0,0.6);" aria-labelledby="sabured-title">
+        <section class="magazine-section" style="background: rgba(0,0,0,0.0.6);" aria-labelledby="mola-title">
+            <h2 id="mola-title" class="section-title">Catálogo Mola</h2>
+            <div id="magazine-mola" class="mag-container" role="region" aria-label="Catálogo interactivo de Mola">
+                <div class="page cover-page" style="background: var(--guna-gold);" role="article">
+                    <div class="page-inner">
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/naypiler_nega.png" 
+                             style="width: 180px; margin-bottom: 20px; display: block;" 
+                             alt="Logo Naypler Nega">
+                        <h1 style="color: black;">MOLA</h1>
+                        <p style="color: black;">Arte Ancestral Hecho a Mano</p>
+                    </div>
+                </div>
+                <div class="page" role="article">
+                    <div class="page-inner">
+                        <h3>Mola Protección</h3>
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/QOXTJWTCLFB43PQRF32TCNLP2Y.jpg" 
+                             class="page-img" 
+                             alt="Mola Protección - Diseño geométrico que representa los caminos de la vida">
+                        <p>Diseño geométrico que representa los caminos de la vida.</p>
+                        <div class="mag-actions">
+                            <a href="#" class="btn-cotizar" aria-label="Cotizar Mola Protección">COTIZAR</a>
+                            <button class="btn-fav" aria-label="Agregar Mola Protección a favoritos">
+                                <i class="far fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="page" role="article">
+                    <div class="page-inner">
+                        <h3>Mola Naturaleza</h3>
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/605153297_17863719954545773_5913089169634130301_n.jpg" 
+                             class="page-img" 
+                             alt="Mola Naturaleza - Inspirada en las aves del archipiélago de San Blas">
+                        <p>Inspirada en las aves del archipiélago de San Blas.</p>
+                        <div class="mag-actions">
+                            <a href="#" class="btn-cotizar" aria-label="Cotizar Mola Naturaleza">COTIZAR</a>
+                            <button class="btn-fav" aria-label="Agregar Mola Naturaleza a favoritos">
+                                <i class="far fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="page" role="article">
+                    <div class="page-inner">
+                        <h3>Mola Marina</h3>
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/Panama_mola3.jpg" 
+                             class="page-img" 
+                             alt="Mola Marina - Representación de la vida marina del Caribe">
+                        <p>Representación de la vida marina y los peces del Caribe.</p>
+                        <div class="mag-actions">
+                            <a href="#" class="btn-cotizar" aria-label="Cotizar Mola Marina">COTIZAR</a>
+                            <button class="btn-fav" aria-label="Agregar Mola Marina a favoritos">
+                                <i class="far fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="page cover-page" style="background: #222;" role="article">
+                    <div class="page-inner"><h2>Arte Sagrado</h2></div>
+                </div>
+            </div>
+            <div class="mag-controls" role="group" aria-label="Controles de navegación del catálogo Mola">
+                <button class="btn-nav" id="prev-mola" aria-label="Página anterior del catálogo Mola">Anterior</button>
+                <button class="btn-nav" id="next-mola" aria-label="Página siguiente del catálogo Mola">Siguiente</button>
+            </div>
+        </section>
+
+        <section class="magazine-section" style="background: rgba(0,0,0,0.0.6);" aria-labelledby="sabured-title">
             <h2 id="sabured-title" class="section-title">Catálogo Sabured</h2>
             <div id="magazine-sabured" class="mag-container" role="region" aria-label="Catálogo interactivo de Sabured">
                 <div class="page cover-page" style="background: var(--guna-gold);" role="article">
                     <div class="page-inner">
                         <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/naypiler_nega.png" 
-                             style="width: 150px; margin-bottom: 20px;" 
-                             alt="Logo Naypiler Nega">
+                             style="width: 180px; margin-bottom: 20px; display: block;" 
+                             alt="Logo Naypler Nega">
                         <h1 style="color: black;">SABURED</h1>
-                        <p style="color: black;">Accesorios Culturales 2025</p>
+                        <p style="color: black;">Accesorios Culturales 2026</p>
                     </div>
                 </div>
                 <div class="page" role="article">
@@ -946,8 +1020,8 @@
                     El punto de encuentro para los emprendedores Dule 💪🌺<br>
                     Ubicado en pleno corazón de 5 de Mayo, encontrarás un espacio lleno de creatividad y cultura:<br>
                     🧵 Diseños de Morsan<br>
-                    🎨 Accesorios Sabured<br>
-                    🪡 Telas, artesanías y mucho más…<br>
+                    🎨 Molas y Musue (dunnue)<br>
+                    🪡 Sabured, Telas tradicionales y mucho más…<br>
                     Un lugar hecho por y para el pueblo Dule, donde la tradición se une con el emprendimiento. 🌿💛<br>
                     📍 Ven, visítanos en Naguiryai Nega y apoya el talento de nuestra gente.</p>
                 </div>
@@ -961,7 +1035,7 @@
                 <div class="footer-section">
                     <h4>Síguenos</h4>
                     <div class="social-icons" role="navigation" aria-label="Redes sociales">
-                        <a href="#" aria-label="Instagram de Naguiryai Nega">
+                        <a href="https://www.instagram.com/naguiryai_nega/" target="_blank" aria-label="Instagram de Naguiryai Nega">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
                         <a href="https://wa.me/50765381020" target="_blank" aria-label="WhatsApp de Naguiryai Nega">
@@ -972,7 +1046,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Naguiryai Nega - Diseños de Morsan y Sabured por Naypiler. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Naguiryai Nega - Diseños de Morsan, Musue, Mola y Sabured por Naypiler. Todos los derechos reservados.</p>
             </div>
         </footer>
     </div>
@@ -1011,6 +1085,7 @@
             // Initialize magazines with delay for animations
             setTimeout(() => {
                 initMag('#magazine-morsan', 'Morsan');
+                initMag('#magazine-mola', 'Mola');
                 initMag('#magazine-sabured', 'Sabured');
             }, 2000);
 
@@ -1025,6 +1100,22 @@
             
             $('#prev-morsan').click(function() { 
                 $('#magazine-morsan').turn('previous'); 
+            }).keypress(function(e) {
+                if (e.which === 13) {
+                    $(this).click();
+                }
+            });
+
+            $('#next-mola').click(function() { 
+                $('#magazine-mola').turn('next'); 
+            }).keypress(function(e) {
+                if (e.which === 13) {
+                    $(this).click();
+                }
+            });
+            
+            $('#prev-mola').click(function() { 
+                $('#magazine-mola').turn('previous'); 
             }).keypress(function(e) {
                 if (e.which === 13) {
                     $(this).click();
@@ -1058,7 +1149,7 @@
                     icon.removeClass('far').addClass('fas');
                     $(this).attr('aria-label', $(this).attr('aria-label').replace('Agregar', 'Quitar'));
                 } else {
-                    $(this).css('color', '#ccc');
+                    $(this).css('color', 'var(--guna-red)');
                     icon.removeClass('fas').addClass('far');
                     $(this).attr('aria-label', $(this).attr('aria-label').replace('Quitar', 'Agregar'));
                 }
@@ -1084,7 +1175,7 @@
                 const magWidth = width < 900 ? width * 0.9 : 1000;
                 const magHeight = width < 900 ? 450 : 600;
 
-                $('#magazine-morsan, #magazine-sabured').turn('display', display).turn('size', magWidth, magHeight);
+                $('#magazine-morsan, #magazine-mola, #magazine-sabured').turn('display', display).turn('size', magWidth, magHeight);
             }
 
             $(window).resize(adjustSize);
