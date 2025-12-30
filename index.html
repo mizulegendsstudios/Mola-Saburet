@@ -1,9 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guna Art - Textiles Ancestrales</title>
+    <meta name="description" content="Naguiryai Nega - Diseños de Musue y Sabured por Naypiler. El punto de encuentro para emprendedores Dule en 5 de Mayo, Panamá. Telas, artesanías y accesorios tradicionales.">
+    <meta name="keywords" content="naguiryai nega, musue, sabured, naypiler, dule, guna yala, 5 de mayo, panamá, artesanías dule, emprendedores indígenas, cultura guna">
+    <meta name="author" content="Naguiryai Nega">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.naguiryai-nega.com/">
+    <meta property="og:title" content="Naguiryai Nega - Diseños de Musue y Sabured por Naypiler">
+    <meta property="og:description" content="El punto de encuentro para los emprendedores Dule. Diseños de Musue, accesorios Sabured, telas y artesanías tradicionales.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/saburetUntitled.jpg">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.naguiryai-nega.com/">
+    <meta property="twitter:title" content="Naguiryai Nega - Diseños de Musue y Sabured por Naypiler">
+    <meta property="twitter:description" content="El punto de encuentro para los emprendedores Dule. Diseños de Musue, accesorios Sabured, telas y artesanías tradicionales.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/saburetUntitled.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.naguiryai-nega.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://code.jquery.com/jquery-3.7.1.min.js" as="script">
+    
+    <title>Naguiryai Nega - Diseños de Musue y Sabured por Naypiler | Emprendedores Dule</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -16,15 +47,56 @@
             --glass: rgba(255, 255, 255, 0.92);
             --whatsapp-green: #25D366;
             --deep-black: #121212;
+            --focus-color: #4CAF50;
+            --text-light: #f5f5f5;
+            --transition-speed: 0.3s;
+            --primary-color: #8B4513; /* Marrón tierra */
+            --secondary-color: #FF9800; /* Naranja vibrante */
+        }
+
+        /* Accessibility - Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            :root {
+                --glass: rgba(255, 255, 255, 1);
+                --deep-black: #000000;
+            }
         }
 
         body { 
             margin: 0; 
             padding: 0; 
-            font-family: 'Segoe UI', sans-serif; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             background-color: #000; 
             color: var(--deep-black); 
             overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Skip Navigation Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
 
         /* --- FONDO FIJO GENERAL --- */
@@ -64,7 +136,7 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* --- HEADER CON ANIMACIÓN --- */
+        /* --- HEADER CON ACCESIBILIDAD --- */
         header {
             background: var(--glass);
             backdrop-filter: blur(10px);
@@ -72,7 +144,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 4px solid var(--guna-red);
+            border-bottom: 4px solid var(--primary-color);
             position: sticky; top: 0; z-index: 100;
             opacity: 0;
             animation: slideInDown 1s ease-out 0.3s forwards;
@@ -84,16 +156,20 @@
         }
 
         .logo-box { 
-            background: var(--guna-red); 
+            background: var(--primary-color); 
             padding: 8px 15px; 
             color: white; 
             font-weight: 900; 
             letter-spacing: 2px;
-            transition: transform 0.3s ease;
+            transition: transform var(--transition-speed) ease;
+            text-decoration: none;
+            display: block;
         }
 
-        .logo-box:hover {
+        .logo-box:hover, .logo-box:focus {
             transform: scale(1.05);
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
         }
 
         .header-actions { display: flex; align-items: center; gap: 15px; }
@@ -101,32 +177,36 @@
         .lang-btn {
             background: white; border: 1px solid #ddd; padding: 8px 12px;
             border-radius: 8px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 5px;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
             opacity: 0;
             animation: fadeIn 0.8s ease-out 0.5s forwards;
         }
 
-        .lang-btn:hover {
-            background: var(--guna-red);
+        .lang-btn:hover, .lang-btn:focus {
+            background: var(--primary-color);
             color: white;
             transform: translateY(-2px);
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
         }
 
         .whatsapp-contact {
             background-color: var(--whatsapp-green); color: white;
             padding: 10px 20px; border-radius: 30px; text-decoration: none;
             font-weight: bold; display: flex; align-items: center; gap: 10px;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
             opacity: 0;
             animation: fadeIn 0.8s ease-out 0.7s forwards;
         }
 
-        .whatsapp-contact:hover {
+        .whatsapp-contact:hover, .whatsapp-contact:focus {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
         }
 
-        /* --- SLIDESHOW MEJORADO --- */
+        /* --- SLIDESHOW MEJORADO CON ACCESIBILIDAD --- */
         .hero { 
             padding: 30px 5%; 
             opacity: 0;
@@ -182,7 +262,7 @@
             100% { opacity: 1; }
         }
 
-        /* --- GRID PRINCIPAL CON ANIMACIONES --- */
+        /* --- GRID PRINCIPAL CON ACCESIBILIDAD --- */
         .main-grid { 
             display: grid; 
             grid-template-columns: 300px 1fr; 
@@ -195,11 +275,11 @@
             border-radius: 15px; 
             padding: 20px; 
             box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-            transition: all 0.4s ease;
+            transition: all var(--transition-speed) ease;
             opacity: 0;
         }
 
-        .card:hover { 
+        .card:hover, .card:focus-within { 
             transform: translateY(-8px); 
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
@@ -217,18 +297,43 @@
         .product-card:nth-child(3) { animation-delay: 1.7s; }
 
         .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .product-img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; transition: transform 0.3s ease; }
+        .product-img { 
+            width: 100%; 
+            height: 180px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            transition: transform var(--transition-speed) ease;
+        }
         
         .product-img:hover {
             transform: scale(1.05);
         }
 
-        .price { color: var(--guna-red); font-weight: bold; font-size: 1.4rem; }
-        .badge { font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; font-weight: bold; text-transform: uppercase; }
-        .mola-badge { background: var(--guna-red); color: white; }
-        .saburet-badge { background: #2e7d32; color: white; }
+        .price { 
+            color: var(--primary-color); 
+            font-weight: bold; 
+            font-size: 1.4rem; 
+        }
+        
+        .badge { 
+            font-size: 0.7rem; 
+            padding: 3px 8px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+        }
+        
+        .musue-badge { 
+            background: var(--primary-color); 
+            color: white; 
+        }
+        
+        .sabured-badge { 
+            background: var(--secondary-color); 
+            color: white; 
+        }
 
-        /* --- SECCIÓN DE REVISTA CON ANIMACIÓN --- */
+        /* --- SECCIÓN DE REVISTA CON ACCESIBILIDAD --- */
         .magazine-section {
             padding: 80px 0;
             display: flex;
@@ -260,26 +365,51 @@
             animation: scaleIn 0.8s ease-out 0.5s forwards;
         }
 
-        .page { background: white; color: #111; overflow: hidden; }
-        .page-inner { padding: 30px; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; }
-        .page-img { width: 100%; height: 350px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+        .page { 
+            background: white; 
+            color: #111; 
+            overflow: hidden; 
+        }
+        
+        .page-inner { 
+            padding: 30px; 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
+            box-sizing: border-box; 
+        }
+        
+        .page-img { 
+            width: 100%; 
+            height: 350px; 
+            object-fit: cover; 
+            border-radius: 5px; 
+            margin-bottom: 15px; 
+        }
 
         .cover-page {
-            background: linear-gradient(45deg, var(--guna-red), #8b0000);
+            background: linear-gradient(45deg, var(--primary-color), #5D2F0B);
             color: white; display: flex; align-items: center; justify-content: center; text-align: center;
         }
 
-        .mag-actions { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .mag-actions { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-top: auto; 
+        }
         
         .btn-cotizar {
             background: var(--whatsapp-green); color: white; text-decoration: none;
             padding: 10px 15px; border-radius: 5px; font-weight: bold; font-size: 0.9rem;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
         }
 
-        .btn-cotizar:hover {
+        .btn-cotizar:hover, .btn-cotizar:focus {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
         }
 
         .btn-fav { 
@@ -288,12 +418,16 @@
             font-size: 1.5rem; 
             color: #ccc; 
             cursor: pointer; 
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
+            padding: 5px;
+            border-radius: 50%;
         }
 
-        .btn-fav:hover { 
-            color: var(--guna-red); 
+        .btn-fav:hover, .btn-fav:focus { 
+            color: var(--primary-color); 
             transform: scale(1.2);
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
         }
 
         .mag-controls { 
@@ -305,14 +439,16 @@
         }
         
         .btn-nav {
-            background: var(--guna-red); color: white; border: none;
+            background: var(--primary-color); color: white; border: none;
             padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: bold;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
         }
 
-        .btn-nav:hover {
+        .btn-nav:hover, .btn-nav:focus {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
         }
 
         .view-more-container { 
@@ -323,20 +459,83 @@
         }
         
         .btn-view-more {
-            background: var(--guna-gold); color: var(--deep-black); border: none;
+            background: var(--secondary-color); color: var(--deep-black); border: none;
             padding: 12px 30px; border-radius: 30px; font-weight: bold; cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
         }
 
-        .btn-view-more:hover {
-            background: var(--guna-red); color: white;
+        .btn-view-more:hover, .btn-view-more:focus {
+            background: var(--primary-color); color: white;
             transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
         }
 
-        /* --- FOOTER CON ANIMACIÓN --- */
+        /* --- SECCIÓN DE INFORMACIÓN --- */
+        .info-section {
+            padding: 60px 5%;
+            background: rgba(0,0,0,0.5);
+            margin: 40px 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 2.2s forwards;
+        }
+
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: var(--glass);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all var(--transition-speed) ease;
+            opacity: 0;
+            animation: scaleIn 0.8s ease-out forwards;
+        }
+
+        .info-card:nth-child(1) { animation-delay: 2.4s; }
+        .info-card:nth-child(2) { animation-delay: 2.6s; }
+        .info-card:nth-child(3) { animation-delay: 2.8s; }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .info-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .info-text {
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .map-container {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        /* --- FOOTER CON ACCESIBILIDAD --- */
         footer {
             background: var(--deep-black); color: white; padding: 50px 5% 20px 5%;
-            margin-top: 50px; border-top: 4px solid var(--guna-red);
+            margin-top: 50px; border-top: 4px solid var(--primary-color);
             opacity: 0;
             animation: slideInUp 1s ease-out 2.3s forwards;
         }
@@ -362,15 +561,15 @@
         .footer-section:nth-child(3) { animation-delay: 2.9s; }
 
         .footer-section h4 { 
-            border-left: 3px solid var(--guna-red); 
+            border-left: 3px solid var(--primary-color); 
             padding-left: 10px; 
             margin-bottom: 20px; 
             text-transform: uppercase;
-            transition: color 0.3s ease;
+            transition: color var(--transition-speed) ease;
         }
 
         .footer-section h4:hover {
-            color: var(--guna-gold);
+            color: var(--secondary-color);
         }
         
         .footer-section p, .footer-section a { 
@@ -379,12 +578,14 @@
             font-size: 0.9rem; 
             margin-bottom: 10px; 
             display: block;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
         }
 
-        .footer-section a:hover {
-            color: var(--guna-gold);
+        .footer-section a:hover, .footer-section a:focus {
+            color: var(--secondary-color);
             transform: translateX(5px);
+            outline: 1px solid var(--focus-color);
+            outline-offset: 2px;
         }
 
         .social-icons { 
@@ -396,12 +597,16 @@
 
         .social-icons a {
             color: #bbb;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
+            padding: 5px;
+            border-radius: 50%;
         }
 
-        .social-icons a:hover {
-            color: var(--guna-gold);
+        .social-icons a:hover, .social-icons a:focus {
+            color: var(--secondary-color);
             transform: translateY(-3px);
+            outline: 2px solid var(--focus-color);
+            outline-offset: 2px;
         }
 
         .footer-bottom { 
@@ -415,235 +620,443 @@
             animation: fadeIn 0.8s ease-out 3.1s forwards;
         }
 
-        /* --- RESPONSIVE --- */
+        /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 900px) {
             .main-grid { grid-template-columns: 1fr; }
             .product-grid { grid-template-columns: repeat(2, 1fr); }
             .mag-container { width: 100%; height: 400px; }
         }
+
+        @media (max-width: 600px) {
+            .product-grid { grid-template-columns: 1fr; }
+            .slideshow-container { height: 250px; }
+            .slide { padding-left: 20px; }
+            .slide h2 { font-size: 1.8rem !important; }
+        }
     </style>
 </head>
 <body>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <div class="background-fixed"></div>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Naguiryai Nega",
+        "description": "Diseños de Musue y Sabured por Naypiler. El punto de encuentro para los emprendedores Dule en 5 de Mayo, Panamá.",
+        "url": "https://www.naguiryai-nega.com",
+        "telephone": "+50765381020",
+        "email": "naguiryai.nega@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Local 6, Galería Comercial, 5 de mayo, Santa Ana",
+            "addressLocality": "Ciudad de Panamá",
+            "addressCountry": "Panamá"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "8.960829",
+            "longitude": "-79.541266"
+        },
+        "openingHours": "Mo,Tu,We,Th,Fr 09:30-16:30",
+        "sameAs": [
+            "https://www.instagram.com/naguiryai.nega",
+            "https://wa.me/50765381020"
+        ],
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "PAB",
+            "lowPrice": "12.00",
+            "highPrice": "75.00"
+        }
+    }
+    </script>
+
+    <div class="background-fixed" role="presentation" aria-hidden="true"></div>
 
     <div class="main-wrapper">
-        <header>
-            <div class="logo-box">GUNA ART</div>
-            <div class="header-actions">
-                <button class="lang-btn"><i class="fas fa-globe"></i> ES | EN</button>
-                <a href="https://wa.me/50700000000" class="whatsapp-contact" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>Vendedor(a)</span>
+        <header role="banner">
+            <a href="#main-content" class="logo-box" aria-label="Naguiryai Nega - Inicio">NAGUIRYAI NEGA</a>
+            
+            <nav class="header-actions" role="navigation" aria-label="Navegación principal">
+                <button class="lang-btn" aria-label="Seleccionar idioma">
+                    <i class="fas fa-globe" aria-hidden="true"></i> ES | EN
+                </button>
+                <a href="https://wa.me/50765381020" class="whatsapp-contact" target="_blank" 
+                   aria-label="Contactar por WhatsApp con Naguiryai Nega">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <span>Contáctanos</span>
                 </a>
-            </div>
+            </nav>
         </header>
 
-        <section class="hero">
-            <div class="slideshow-container">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="slideshow-container" role="region" aria-label="Carrusel de productos principales">
                 <div class="slide">
-                    <h2 style="font-size: 3rem;">SABURET TRADICIONAL</h2>
-                    <p>Telas exclusivas importadas para faldas Uwin.</p>
+                    <h2 id="hero-title" style="font-size: 3rem;">DISEÑOS DE MUSUE</h2>
+                    <p>Creaciones únicas que representan la identidad y tradición Dule.</p>
                 </div>
-                <div class="slide">
-                    <h2 style="font-size: 3rem;">ARTE EN MOLAS</h2>
-                    <p>Piezas únicas hechas 100% a mano por artesanas.</p>
+                <div class="slide" aria-hidden="true">
+                    <h2 style="font-size: 3rem;">ACCESORIOS SABURED</h2>
+                    <p>Complementos artesanales que resaltan tu estilo con cultura.</p>
                 </div>
-                <div class="slide">
-                    <h2 style="font-size: 3rem;">ASESORÍA POR WHATSAPP</h2>
-                    <p>Atención personalizada para elegir tus diseños.</p>
+                <div class="slide" aria-hidden="true">
+                    <h2 style="font-size: 3rem;">EMPRENDEDORES DULE</h2>
+                    <p>Apoyando el talento local y preservando nuestras raíces.</p>
                 </div>
             </div>
         </section>
 
-        <main class="main-grid">
-            <aside>
-                <div class="card aside-card" style="border: 2px solid var(--guna-gold);">
-                    <span class="badge mola-badge">Mola del Mes</span>
-                    <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/molaUntitled.jpg" class="product-img" style="height: 250px;">
-                    <h3 style="margin: 15px 0;">Obra Ancestral</h3>
-                    <div class="price">B/. 75.00</div>
-                    <button style="width:100%; background:var(--guna-red); color:white; border:none; padding:12px; border-radius:8px; margin-top:10px; font-weight:bold; cursor:pointer; transition: all 0.3s ease;">Consultar</button>
-                </div>
+        <main id="main-content" class="main-grid" role="main">
+            <aside role="complementary">
+                <article class="card aside-card" style="border: 2px solid var(--secondary-color);">
+                    <span class="badge musue-badge">Musue Destacado</span>
+                    <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/molaUntitled.jpg" 
+                         class="product-img" style="height: 250px;" 
+                         alt="Musue tradicional con patrones geométricos de la cultura Dule">
+                    <h3 style="margin: 15px 0;">Creación Ancestral</h3>
+                    <div class="price" aria-label="Precio: 75.00 balboas">B/. 75.00</div>
+                    <button style="width:100%; background:var(--primary-color); color:white; border:none; padding:12px; border-radius:8px; margin-top:10px; font-weight:bold; cursor:pointer; transition: all var(--transition-speed) ease;" 
+                            aria-label="Consultar sobre Musue Destacado">Consultar</button>
+                </article>
             </aside>
 
             <section>
-                <h2 style="color: white; margin-bottom: 20px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); opacity: 0; animation: slideInRight 0.8s ease-out 1.1s forwards;">Catálogo Textil</h2>
-                <div class="product-grid">
-                    <article class="card product-card">
-                        <span class="badge saburet-badge">Saburet</span>
-                        <img src="https://plus.unsplash.com/premium_photo-1673298260591-7000cd0b2f79?q=80&w=400" class="product-img">
-                        <div class="price">B/. 14.50</div>
-                        <p style="font-weight:bold;">Saburet Geométrico</p>
+                <h2 style="color: white; margin-bottom: 20px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); opacity: 0; animation: slideInRight 0.8s ease-out 1.1s forwards;">Nuestros Productos</h2>
+                <div class="product-grid" role="list">
+                    <article class="card product-card" role="listitem">
+                        <span class="badge musue-badge">Musue</span>
+                        <img src="https://plus.unsplash.com/premium_photo-1673298260591-7000cd0b2f79?q=80&w=400" 
+                             class="product-img" 
+                             alt="Musue con diseños tradicionales Dule">
+                        <div class="price" aria-label="Precio: 14.50 balboas">B/. 14.50</div>
+                        <p style="font-weight:bold;">Musue Tradicional</p>
                     </article>
-                    <article class="card product-card">
-                        <span class="badge mola-badge">Mola</span>
-                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/Panama_mola2.jpg" class="product-img">
-                        <div class="price">B/. 35.00</div>
-                        <p style="font-weight:bold;">Mola "Vida Isleña"</p>
+                    <article class="card product-card" role="listitem">
+                        <span class="badge sabured-badge">Sabured</span>
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/Panama_mola2.jpg" 
+                             class="product-img" 
+                             alt="Accesorio Sabured con motivos culturales">
+                        <div class="price" aria-label="Precio: 35.00 balboas">B/. 35.00</div>
+                        <p style="font-weight:bold;">Sabured Cultural</p>
                     </article>
-                    <article class="card product-card">
-                        <span class="badge saburet-badge">Saburet</span>
-                        <img src="https://images.unsplash.com/photo-1727684455609-02060483c26f?q=80&w=400" class="product-img">
-                        <div class="price">B/. 12.00</div>
-                        <p style="font-weight:bold;">Saburet Floral</p>
+                    <article class="card product-card" role="listitem">
+                        <span class="badge musue-badge">Musue</span>
+                        <img src="https://images.unsplash.com/photo-1727684455609-02060483c26f?q=80&w=400" 
+                             class="product-img" 
+                             alt="Musue floral con diseños coloridos">
+                        <div class="price" aria-label="Precio: 12.00 balboas">B/. 12.00</div>
+                        <p style="font-weight:bold;">Musue Floral</p>
                     </article>
                 </div>
                 <div class="view-more-container">
-                    <button class="btn-view-more">Ver Catálogo Completo</button>
+                    <button class="btn-view-more" aria-label="Ver catálogo completo de productos">Ver Catálogo Completo</button>
                 </div>
             </section>
         </main>
 
-        <section class="magazine-section">
-            <h2 class="section-title">Catálogo Saburet</h2>
-            <div id="magazine-saburet" class="mag-container">
-                <div class="page cover-page">
+        <!-- SECCIÓN DE INFORMACIÓN -->
+        <section class="info-section" aria-labelledby="info-title">
+            <h2 id="info-title" class="section-title" style="text-align: center; margin-bottom: 50px;">Visítanos</h2>
+            <div class="info-container">
+                <div class="info-card">
+                    <i class="fas fa-clock info-icon" aria-hidden="true"></i>
+                    <h3 class="info-title">Horario</h3>
+                    <p class="info-text">Lunes a Viernes<br>9:30 am - 4:30 pm</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt info-icon" aria-hidden="true"></i>
+                    <h3 class="info-title">Ubicación</h3>
+                    <p class="info-text">Local 6, Galería Comercial<br>5 de mayo, Santa Ana<br>Ciudad de Panamá, Panamá</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone info-icon" aria-hidden="true"></i>
+                    <h3 class="info-title">Contacto</h3>
+                    <p class="info-text">WhatsApp: +507 65381020<br>Email: naguiryai.nega@gmail.com</p>
+                </div>
+            </div>
+            <div class="info-container" style="margin-top: 30px;">
+                <div class="map-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=8.960829,-79.541266&z=15&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Mapa de ubicación de Naguiryai Nega">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="magazine-section" aria-labelledby="musue-title">
+            <h2 id="musue-title" class="section-title">Catálogo Musue</h2>
+            <div id="magazine-musue" class="mag-container" role="region" aria-label="Catálogo interactivo de Musue">
+                <div class="page cover-page" role="article">
                     <div class="page-inner">
-                        <h1>SABURET</h1>
-                        <p>Catálogo de Telas Tradicionales 2025</p>
+                        <h1>MUSUE</h1>
+                        <p>Catálogo de Diseños Tradicionales 2025</p>
                     </div>
                 </div>
-                <div class="page">
+                <div class="page" role="article">
                     <div class="page-inner">
-                        <h3>Diseño Win Clásico</h3>
-                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/saburete-36_-2-scaled.jpg" class="page-img">
-                        <p>Tejido de alta resistencia ideal para la confección del Uwin diario.</p>
+                        <h3>Diseño Clásico Dule</h3>
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/saburete-36_-2-scaled.jpg" 
+                             class="page-img" 
+                             alt="Diseño Clásico Dule - Musue tradicional con patrones ancestrales">
+                        <p>Creación tradicional que representa la identidad y cosmovisión Dule.</p>
                         <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR</a>
-                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <a href="#" class="btn-cotizar" aria-label="Cotizar Diseño Clásico Dule">COTIZAR</a>
+                            <button class="btn-fav" aria-label="Agregar Diseño Clásico Dule a favoritos">
+                                <i class="far fa-heart" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="page">
+                <div class="page" role="article">
                     <div class="page-inner">
                         <h3>Estilo Geométrico</h3>
-                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/saburete-36_-4-scaled.jpg" class="page-img">
-                        <p>Diseño moderno con patrones tradicionales en tonos azules.</p>
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/saburete-36_-4-scaled.jpg" 
+                             class="page-img" 
+                             alt="Estilo Geométrico - Musue con patrones modernos inspirados en la naturaleza">
+                        <p>Diseño contemporáneo con patrones geométricos inspirados en nuestra cultura.</p>
                         <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR</a>
-                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <a href="#" class="btn-cotizar" aria-label="Cotizar Estilo Geométrico">COTIZAR</a>
+                            <button class="btn-fav" aria-label="Agregar Estilo Geométrico a favoritos">
+                                <i class="far fa-heart" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="page cover-page" style="background: #333;">
+                <div class="page cover-page" style="background: #333;" role="article">
                     <div class="page-inner"><h2>Fin del Catálogo</h2></div>
                 </div>
             </div>
-            <div class="mag-controls">
-                <button class="btn-nav" id="prev-saburet">Anterior</button>
-                <button class="btn-nav" id="next-saburet">Siguiente</button>
+            <div class="mag-controls" role="group" aria-label="Controles de navegación del catálogo Musue">
+                <button class="btn-nav" id="prev-musue" aria-label="Página anterior del catálogo Musue">Anterior</button>
+                <button class="btn-nav" id="next-musue" aria-label="Página siguiente del catálogo Musue">Siguiente</button>
             </div>
         </section>
 
-        <section class="magazine-section" style="background: rgba(0,0,0,0.6);">
-            <h2 class="section-title">Catálogo Molas</h2>
-            <div id="magazine-molas" class="mag-container">
-                <div class="page cover-page" style="background: var(--guna-gold);">
-                    <div class="page-inner"><h1 style="color: black;">MOLAS</h1></div>
+        <section class="magazine-section" style="background: rgba(0,0,0,0.6);" aria-labelledby="sabured-title">
+            <h2 id="sabured-title" class="section-title">Catálogo Sabured</h2>
+            <div id="magazine-sabured" class="mag-container" role="region" aria-label="Catálogo interactivo de Sabured">
+                <div class="page cover-page" style="background: var(--secondary-color);" role="article">
+                    <div class="page-inner"><h1 style="color: black;">SABURED</h1></div>
                 </div>
-                <div class="page">
+                <div class="page" role="article">
                     <div class="page-inner">
-                        <h3>Mola Naturaleza</h3>
-                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/QOXTJWTCLFB43PQRF32TCNLP2Y.jpg" class="page-img">
-                        <p>Inspirada en las aves del archipiélago de San Blas.</p>
+                        <h3>Accesorio Naturaleza</h3>
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/QOXTJWTCLFB43PQRF32TCNLP2Y.jpg" 
+                             class="page-img" 
+                             alt="Accesorio Naturaleza - Sabured inspirado en la flora y fauna de la región">
+                        <p>Inspirado en la naturaleza y los elementos sagrados de nuestra tierra.</p>
                         <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR</a>
-                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <a href="#" class="btn-cotizar" aria-label="Cotizar Accesorio Naturaleza">COTIZAR</a>
+                            <button class="btn-fav" aria-label="Agregar Accesorio Naturaleza a favoritos">
+                                <i class="far fa-heart" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="page">
+                <div class="page" role="article">
                     <div class="page-inner">
-                        <h3>Mola Marina</h3>
-                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/Panama_mola3.jpg" class="page-img">
-                        <p>Representación de la vida marina y los peces del Caribe.</p>
+                        <h3>Sabured Cultural</h3>
+                        <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/Panama_mola3.jpg" 
+                             class="page-img" 
+                             alt="Sabured Cultural - Accesorio que representa la identidad Dule">
+                        <p>Accesorio que representa la identidad y tradiciones del pueblo Dule.</p>
                         <div class="mag-actions">
-                            <a href="#" class="btn-cotizar">COTIZAR</a>
-                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <a href="#" class="btn-cotizar" aria-label="Cotizar Sabured Cultural">COTIZAR</a>
+                            <button class="btn-fav" aria-label="Agregar Sabured Cultural a favoritos">
+                                <i class="far fa-heart" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="page cover-page" style="background: #222;">
-                    <div class="page-inner"><h2>Arte Sagrado</h2></div>
+                <div class="page cover-page" style="background: #222;" role="article">
+                    <div class="page-inner"><h2>Arte Tradicional</h2></div>
                 </div>
             </div>
-            <div class="mag-controls">
-                <button class="btn-nav" id="prev-molas">Anterior</button>
-                <button class="btn-nav" id="next-molas">Siguiente</button>
+            <div class="mag-controls" role="group" aria-label="Controles de navegación del catálogo Sabured">
+                <button class="btn-nav" id="prev-sabured" aria-label="Página anterior del catálogo Sabured">Anterior</button>
+                <button class="btn-nav" id="next-sabured" aria-label="Página siguiente del catálogo Sabured">Siguiente</button>
             </div>
         </section>
 
-        <footer>
+        <footer role="contentinfo">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h4>Sobre Guna Art</h4>
-                    <p>Preservación y venta de textiles tradicionales de Guna Yala, Panamá.</p>
+                    <h4>Sobre Naguiryai Nega</h4>
+                    <p>🔥✨ ¡Descubre Naguiryai Nega! ✨🔥<br>
+                    El punto de encuentro para los emprendedores Dule 💪🌺<br>
+                    Ubicado en pleno corazón de 5 de Mayo, encontrarás un espacio lleno de creatividad y cultura:<br>
+                    🧵 Diseños Debmusue<br>
+                    🎨 Accesorios Sabured<br>
+                    🪡 Telas, artesanías y mucho más…<br>
+                    Un lugar hecho por y para el pueblo Dule, donde la tradición se une con el emprendimiento. 🌿💛<br>
+                    📍 Ven, visítanos en Naguiryai Nega y apoya el talento de nuestra gente.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p><i class="fas fa-phone"></i> +507 0000-0000</p>
-                    <p><i class="fas fa-envelope"></i> ventas@guna-art.com</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Local 6, Galería Comercial, 5 de mayo, Santa Ana</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> +507 65381020</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> naguiryai.nega@gmail.com</p>
+                    <p><i class="fas fa-clock" aria-hidden="true"></i> Lunes a Viernes: 9:30 am - 4:30 pm</p>
                 </div>
                 <div class="footer-section">
                     <h4>Síguenos</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <div class="social-icons" role="navigation" aria-label="Redes sociales">
+                        <a href="#" aria-label="Instagram de Naguiryai Nega">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wa.me/50765381020" target="_blank" aria-label="WhatsApp de Naguiryai Nega">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </a>
                     </div>
+                    <p style="margin-top: 20px; font-size: 0.8rem;">#OrgulloDule #EmprendedoresIndígenas #NaguiryaiNega</p>
                 </div>
             </div>
-            <div class="footer-bottom">&copy; 2025 Guna Art - Identidad y Cultura.</div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Naguiryai Nega - Diseños de Musue y Sabured por Naypiler. Todos los derechos reservados.</p>
+            </div>
         </footer>
     </div>
 
     <script>
         $(document).ready(function() {
-            function initMag(id) {
+            // Accessibility: Announce page changes for screen readers
+            function announcePageChange(pageNumber, totalPages, magazineName) {
+                const announcement = `Página ${pageNumber} de ${totalPages} en el catálogo ${magazineName}`;
+                const announcementElement = document.createElement('div');
+                announcementElement.setAttribute('role', 'status');
+                announcementElement.setAttribute('aria-live', 'polite');
+                announcementElement.setAttribute('aria-atomic', 'true');
+                announcementElement.style.position = 'absolute';
+                announcementElement.style.left = '-10000px';
+                announcementElement.textContent = announcement;
+                document.body.appendChild(announcementElement);
+                
+                setTimeout(() => {
+                    document.body.removeChild(announcementElement);
+                }, 1000);
+            }
+
+            function initMag(id, name) {
                 $(id).turn({
                     width: 1000, height: 600, autoCenter: true,
-                    display: 'double', gradients: true
+                    display: 'double', gradients: true,
+                    when: {
+                        turning: function(e, page, view) {
+                            announcePageChange(page, $(this).turn('pages'), name);
+                        }
+                    }
                 });
             }
 
-            // Inicializar revistas con retraso para sincronizar con animaciones
+            // Initialize magazines with delay for animations
             setTimeout(() => {
-                initMag('#magazine-saburet');
-                initMag('#magazine-molas');
+                initMag('#magazine-musue', 'Musue');
+                initMag('#magazine-sabured', 'Sabured');
             }, 2000);
 
-            $('#next-saburet').click(function() { $('#magazine-saburet').turn('next'); });
-            $('#prev-saburet').click(function() { $('#magazine-saburet').turn('previous'); });
-            $('#next-molas').click(function() { $('#magazine-molas').turn('next'); });
-            $('#prev-molas').click(function() { $('#magazine-molas').turn('previous'); });
-
-            $('.btn-fav').click(function() {
-                $(this).toggleClass('active');
-                const icon = $(this).find('i');
-                if($(this).hasClass('active')) {
-                    $(this).css('color', '#d32f2f');
-                    icon.removeClass('far').addClass('fas');
-                } else {
-                    $(this).css('color', '#ccc');
-                    icon.removeClass('fas').addClass('far');
+            // Navigation controls with keyboard support
+            $('#next-musue').click(function() { 
+                $('#magazine-musue').turn('next'); 
+            }).keypress(function(e) {
+                if (e.which === 13) { // Enter key
+                    $(this).click();
+                }
+            });
+            
+            $('#prev-musue').click(function() { 
+                $('#magazine-musue').turn('previous'); 
+            }).keypress(function(e) {
+                if (e.which === 13) {
+                    $(this).click();
                 }
             });
 
-            $('.btn-view-more').click(function() {
-                $('html, body').animate({ scrollTop: $('#magazine-saburet').offset().top - 100 }, 800);
+            $('#next-sabured').click(function() { 
+                $('#magazine-sabured').turn('next'); 
+            }).keypress(function(e) {
+                if (e.which === 13) {
+                    $(this).click();
+                }
+            });
+            
+            $('#prev-sabured').click(function() { 
+                $('#magazine-sabured').turn('previous'); 
+            }).keypress(function(e) {
+                if (e.which === 13) {
+                    $(this).click();
+                }
             });
 
+            // Favorite button with accessibility
+            $('.btn-fav').click(function() {
+                $(this).toggleClass('active');
+                const icon = $(this).find('i');
+                const isActive = $(this).hasClass('active');
+                
+                if(isActive) {
+                    $(this).css('color', '#8B4513');
+                    icon.removeClass('far').addClass('fas');
+                    $(this).attr('aria-label', $(this).attr('aria-label').replace('Agregar', 'Quitar'));
+                } else {
+                    $(this).css('color', '#ccc');
+                    icon.removeClass('fas').addClass('far');
+                    $(this).attr('aria-label', $(this).attr('aria-label').replace('Quitar', 'Agregar'));
+                }
+            }).keypress(function(e) {
+                if (e.which === 13) {
+                    $(this).click();
+                }
+            });
+
+            // View more button
+            $('.btn-view-more').click(function() {
+                $('html, body').animate({ scrollTop: $('#magazine-musue').offset().top - 100 }, 800);
+            }).keypress(function(e) {
+                if (e.which === 13) {
+                    $(this).click();
+                }
+            });
+
+            // Responsive magazine size
             function adjustSize() {
                 const width = $(window).width();
                 const display = width < 900 ? 'single' : 'double';
                 const magWidth = width < 900 ? width * 0.9 : 1000;
                 const magHeight = width < 900 ? 450 : 600;
 
-                $('#magazine-saburet, #magazine-molas').turn('display', display).turn('size', magWidth, magHeight);
+                $('#magazine-musue, #magazine-sabured').turn('display', display).turn('size', magWidth, magHeight);
             }
 
             $(window).resize(adjustSize);
             adjustSize();
+
+            // Keyboard navigation for main content
+            $(document).keydown(function(e) {
+                // Tab navigation enhancement
+                if (e.key === 'Tab') {
+                    $('body').addClass('keyboard-navigation');
+                }
+            });
+
+            $(document).mousedown(function() {
+                $('body').removeClass('keyboard-navigation');
+            });
+
+            // Focus management for better accessibility
+            $('a, button, input, select, textarea').on('focus', function() {
+                $(this).addClass('focused');
+            }).on('blur', function() {
+                $(this).removeClass('focused');
+            });
         });
     </script>
 </body>
