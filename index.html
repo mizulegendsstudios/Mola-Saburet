@@ -50,8 +50,6 @@
             --focus-color: #4CAF50;
             --text-light: #f5f5f5;
             --transition-speed: 0.3s;
-            --primary-color: #8B4513; /* Marrón tierra */
-            --secondary-color: #FF9800; /* Naranja vibrante */
         }
 
         /* Accessibility - Reduced Motion */
@@ -87,7 +85,7 @@
             position: absolute;
             top: -40px;
             left: 0;
-            background: var(--primary-color);
+            background: var(--guna-red);
             color: white;
             padding: 8px;
             text-decoration: none;
@@ -144,7 +142,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 4px solid var(--primary-color);
+            border-bottom: 4px solid var(--guna-red);
             position: sticky; top: 0; z-index: 100;
             opacity: 0;
             animation: slideInDown 1s ease-out 0.3s forwards;
@@ -156,7 +154,7 @@
         }
 
         .logo-box { 
-            background: var(--primary-color); 
+            background: var(--guna-red); 
             padding: 8px 15px; 
             color: white; 
             font-weight: 900; 
@@ -168,8 +166,6 @@
 
         .logo-box:hover, .logo-box:focus {
             transform: scale(1.05);
-            outline: 2px solid var(--focus-color);
-            outline-offset: 2px;
         }
 
         .header-actions { display: flex; align-items: center; gap: 15px; }
@@ -183,7 +179,7 @@
         }
 
         .lang-btn:hover, .lang-btn:focus {
-            background: var(--primary-color);
+            background: var(--guna-red);
             color: white;
             transform: translateY(-2px);
             outline: 2px solid var(--focus-color);
@@ -310,7 +306,7 @@
         }
 
         .price { 
-            color: var(--primary-color); 
+            color: var(--guna-red); 
             font-weight: bold; 
             font-size: 1.4rem; 
         }
@@ -324,13 +320,13 @@
         }
         
         .musue-badge { 
-            background: var(--primary-color); 
+            background: var(--guna-red); 
             color: white; 
         }
         
         .sabured-badge { 
-            background: var(--secondary-color); 
-            color: white; 
+            background: var(--guna-gold); 
+            color: var(--deep-black); 
         }
 
         /* --- SECCIÓN DE REVISTA CON ACCESIBILIDAD --- */
@@ -388,7 +384,7 @@
         }
 
         .cover-page {
-            background: linear-gradient(45deg, var(--primary-color), #5D2F0B);
+            background: linear-gradient(45deg, var(--guna-red), #8b0000);
             color: white; display: flex; align-items: center; justify-content: center; text-align: center;
         }
 
@@ -424,7 +420,7 @@
         }
 
         .btn-fav:hover, .btn-fav:focus { 
-            color: var(--primary-color); 
+            color: var(--guna-red); 
             transform: scale(1.2);
             outline: 2px solid var(--focus-color);
             outline-offset: 2px;
@@ -439,14 +435,14 @@
         }
         
         .btn-nav {
-            background: var(--primary-color); color: white; border: none;
+            background: var(--guna-red); color: white; border: none;
             padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: bold;
             transition: all var(--transition-speed) ease;
         }
 
         .btn-nav:hover, .btn-nav:focus {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
             outline: 2px solid var(--focus-color);
             outline-offset: 2px;
         }
@@ -459,22 +455,22 @@
         }
         
         .btn-view-more {
-            background: var(--secondary-color); color: var(--deep-black); border: none;
+            background: var(--guna-gold); color: var(--deep-black); border: none;
             padding: 12px 30px; border-radius: 30px; font-weight: bold; cursor: pointer;
             transition: all var(--transition-speed) ease;
         }
 
         .btn-view-more:hover, .btn-view-more:focus {
-            background: var(--primary-color); color: white;
+            background: var(--guna-red); color: white;
             transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             outline: 2px solid var(--focus-color);
             outline-offset: 2px;
         }
 
-        /* --- SECCIÓN DE INFORMACIÓN --- */
+        /* --- SECCIÓN DE INFORMACIÓN CON TEXTO VISIBLE --- */
         .info-section {
             padding: 60px 5%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.7);
             margin: 40px 0;
             opacity: 0;
             animation: fadeIn 1s ease-out 2.2s forwards;
@@ -509,7 +505,7 @@
 
         .info-icon {
             font-size: 2.5rem;
-            color: var(--primary-color);
+            color: var(--guna-red);
             margin-bottom: 15px;
         }
 
@@ -517,12 +513,13 @@
             font-size: 1.3rem;
             font-weight: bold;
             margin-bottom: 10px;
-            color: var(--primary-color);
+            color: var(--guna-red);
         }
 
         .info-text {
-            color: #f5f5f5;
+            color: var(--deep-black); /* Texto oscuro para visibilidad */
             line-height: 1.6;
+            font-weight: 500; /* Texto más grueso para mejor legibilidad */
         }
 
         .map-container {
@@ -535,7 +532,7 @@
         /* --- FOOTER CON ACCESIBILIDAD --- */
         footer {
             background: var(--deep-black); color: white; padding: 50px 5% 20px 5%;
-            margin-top: 50px; border-top: 4px solid var(--primary-color);
+            margin-top: 50px; border-top: 4px solid var(--guna-red);
             opacity: 0;
             animation: slideInUp 1s ease-out 2.3s forwards;
         }
@@ -561,7 +558,7 @@
         .footer-section:nth-child(3) { animation-delay: 2.9s; }
 
         .footer-section h4 { 
-            border-left: 3px solid var(--primary-color); 
+            border-left: 3px solid var(--guna-red); 
             padding-left: 10px; 
             margin-bottom: 20px; 
             text-transform: uppercase;
@@ -569,7 +566,7 @@
         }
 
         .footer-section h4:hover {
-            color: var(--secondary-color);
+            color: var(--guna-gold);
         }
         
         .footer-section p, .footer-section a { 
@@ -582,7 +579,7 @@
         }
 
         .footer-section a:hover, .footer-section a:focus {
-            color: var(--secondary-color);
+            color: var(--guna-gold);
             transform: translateX(5px);
             outline: 1px solid var(--focus-color);
             outline-offset: 2px;
@@ -603,7 +600,7 @@
         }
 
         .social-icons a:hover, .social-icons a:focus {
-            color: var(--secondary-color);
+            color: var(--guna-gold);
             transform: translateY(-3px);
             outline: 2px solid var(--focus-color);
             outline-offset: 2px;
@@ -711,14 +708,14 @@
 
         <main id="main-content" class="main-grid" role="main">
             <aside role="complementary">
-                <article class="card aside-card" style="border: 2px solid var(--secondary-color);">
+                <article class="card aside-card" style="border: 2px solid var(--guna-gold);">
                     <span class="badge musue-badge">Musue Destacado</span>
                     <img src="https://raw.githubusercontent.com/mizulegendsstudios/Mola-Saburet/main/assets/molaUntitled.jpg" 
                          class="product-img" style="height: 250px;" 
                          alt="Musue tradicional con patrones geométricos de la cultura Dule">
                     <h3 style="margin: 15px 0;">Creación Ancestral</h3>
                     <div class="price" aria-label="Precio: 75.00 balboas">B/. 75.00</div>
-                    <button style="width:100%; background:var(--primary-color); color:white; border:none; padding:12px; border-radius:8px; margin-top:10px; font-weight:bold; cursor:pointer; transition: all var(--transition-speed) ease;" 
+                    <button style="width:100%; background:var(--guna-red); color:white; border:none; padding:12px; border-radius:8px; margin-top:10px; font-weight:bold; cursor:pointer; transition: all var(--transition-speed) ease;" 
                             aria-label="Consultar sobre Musue Destacado">Consultar</button>
                 </article>
             </aside>
@@ -757,7 +754,7 @@
             </section>
         </main>
 
-        <!-- SECCIÓN DE INFORMACIÓN -->
+        <!-- SECCIÓN DE INFORMACIÓN CON TEXTO VISIBLE -->
         <section class="info-section" aria-labelledby="info-title">
             <h2 id="info-title" class="section-title" style="text-align: center; margin-bottom: 50px;">Visítanos</h2>
             <div class="info-container">
@@ -844,7 +841,7 @@
         <section class="magazine-section" style="background: rgba(0,0,0,0.6);" aria-labelledby="sabured-title">
             <h2 id="sabured-title" class="section-title">Catálogo Sabured</h2>
             <div id="magazine-sabured" class="mag-container" role="region" aria-label="Catálogo interactivo de Sabured">
-                <div class="page cover-page" style="background: var(--secondary-color);" role="article">
+                <div class="page cover-page" style="background: var(--guna-gold);" role="article">
                     <div class="page-inner"><h1 style="color: black;">SABURED</h1></div>
                 </div>
                 <div class="page" role="article">
@@ -894,7 +891,7 @@
                     <p>🔥✨ ¡Descubre Naguiryai Nega! ✨🔥<br>
                     El punto de encuentro para los emprendedores Dule 💪🌺<br>
                     Ubicado en pleno corazón de 5 de Mayo, encontrarás un espacio lleno de creatividad y cultura:<br>
-                    🧵 Diseños Debmusue<br>
+                    🧵 Diseños De Musue<br>
                     🎨 Accesorios Sabured<br>
                     🪡 Telas, artesanías y mucho más…<br>
                     Un lugar hecho por y para el pueblo Dule, donde la tradición se une con el emprendimiento. 🌿💛<br>
@@ -1003,7 +1000,7 @@
                 const isActive = $(this).hasClass('active');
                 
                 if(isActive) {
-                    $(this).css('color', '#8B4513');
+                    $(this).css('color', '#d32f2f');
                     icon.removeClass('far').addClass('fas');
                     $(this).attr('aria-label', $(this).attr('aria-label').replace('Agregar', 'Quitar'));
                 } else {
